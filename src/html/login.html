@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Meta name= »Author » content= »restaurant Olga »>
+    <title>Chez Olga | Connexion</title>
+    <script
+    src="https://kit.fontawesome.com/1b1fa6fbda.js"
+    crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="margin: 0">
+    <video autoplay muted>
+        <source src="../../assets/videos/coffee.mp4">
+    </video>
+    <header>
+        <span aria-label="titre du restaurant">Chez Olga</span>
+        <nav style="display: flex; align-items: center; justify-content: space-evenly;">
+            <a href="/" style="margin-inline: 10px;">
+                <i class="fa-solid fa-utensils" ></i>
+            </a>
+        
+            <a href="/" style="margin-inline: 10px;">
+                <i class="fa-solid fa-right-to-bracket" ></i>
+            </a>
+    
+        </nav>
+    </header>
+    <main class="login-main">
+        <form id="login-form">
+            <section>
+                <article>
+                    <label for="email"></label>
+                    <input id="email" type="email" placeholder="Entrer votre email" aria-required="true" /> 
+                    <small id="error-email"></small>
+                </article>
+    
+                <article>
+                    <label for="password"></label>
+                    <input id="password" type="password" aria-required="true"/> 
+                    <small id="error-password"></small>
+                </article>
+              
+
+            </section>
+            <section style="display: flex;">
+                <button type="submit">
+                    Valider
+                </button>
+                <button type="submit">
+                    Réinitialiser
+                </button>
+            </section>
+        </form>
+
+    </main>
+    <script type="module">
+        import { forbiddenWords as fw } from "../js/constants/forbiddenWords.js"
+
+
+        const form = document.getElementById('login-form');
+
+        // La gestion de l'événement submit
+        form.addEventListener('submit',function (event){
+            event.preventDefault();
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+        })
+
+        const email = document.getElementById('email');
+
+
+
+        // la gestion de l'évenement input
+        email.addEventListener('input',function(event){
+            console.log(event.target.value);
+
+            const pattern = new RegExp(/^[a-z]{10}$/, 'g');
+
+            if(pattern.test(event.target.value) == true){
+
+                email.style.outline = "green 1px solid";
+            } else {
+                email.style.outline = "red 1px solid";
+            }
+
+
+
+        })
+        const password = document.getElementById('password');
+        password.addEventListener('input',function (event){
+        console.log(event.target.value);
+        console.log(event.target.value);
+
+            for(const word of fw){
+                // pour chaque mot du tableau
+
+                if(event.target.value == word){
+                    // si la valeur de la cible est égal à un mot du tableau
+        
+                    const errorSmall = document.getElementById('error-password');
+                    errorSmall.innerHTML = "Vous avez écrit une bêtise";
+                    errorSmall.style.color = "red";
+
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
