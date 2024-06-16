@@ -17,7 +17,7 @@ const email = document.getElementById('email');
 email.addEventListener('input',function(event){
     console.log(event.target.value);
 
-    const pattern = new RegExp(/^[a-z]{10}$/, 'g');
+    const pattern = new RegExp(/^[a-z@.]{4,}$/, 'g');
 
     if(pattern.test(event.target.value) == true){
 
