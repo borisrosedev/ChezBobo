@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <Meta name= »Author » content= »restaurant Olga »>
-    <title>Chez Olga | Connexion</title>
+    <title>Chez Boris | Connexion</title>
     <script
     src="https://kit.fontawesome.com/1b1fa6fbda.js"
     crossorigin="anonymous"
@@ -56,58 +56,7 @@
         </form>
 
     </main>
-    <script type="module">
-        import { forbiddenWords as fw } from "../js/constants/forbiddenWords.js"
-
-
-        const form = document.getElementById('login-form');
-
-        // La gestion de l'événement submit
-        form.addEventListener('submit',function (event){
-            event.preventDefault();
-            const email = document.getElementById('email');
-            const password = document.getElementById('password');
-        })
-
-        const email = document.getElementById('email');
-
-
-
-        // la gestion de l'évenement input
-        email.addEventListener('input',function(event){
-            console.log(event.target.value);
-
-            const pattern = new RegExp(/^[a-z]{10}$/, 'g');
-
-            if(pattern.test(event.target.value) == true){
-
-                email.style.outline = "green 1px solid";
-            } else {
-                email.style.outline = "red 1px solid";
-            }
-
-
-
-        })
-        const password = document.getElementById('password');
-        password.addEventListener('input',function (event){
-        console.log(event.target.value);
-        console.log(event.target.value);
-
-            for(const word of fw){
-                // pour chaque mot du tableau
-
-                if(event.target.value == word){
-                    // si la valeur de la cible est égal à un mot du tableau
-        
-                    const errorSmall = document.getElementById('error-password');
-                    errorSmall.innerHTML = "Vous avez écrit une bêtise";
-                    errorSmall.style.color = "red";
-
-                }
-            }
-        })
-    </script>
+    <script type="module" src="../js/pages/login.js"></script>
     
 </body>
 </html>
