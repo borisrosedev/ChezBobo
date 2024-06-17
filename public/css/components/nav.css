@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  a {
+    margin-inline: 10px;
+    position: relative;
+
+    &::after {
+      transition: all ease-in-out 300ms;
+      background-color: #000;
+      content: "";
+      background-color: #000;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0%;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

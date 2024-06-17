@@ -1,0 +1,15 @@
+.app-header {
+  opacity: 0;
+  animation: show-down 1000ms ease-in-out forwards;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 8vh;
+  background-color: rgb(162, 216, 239);
+  padding-inline: 10px;
+}
