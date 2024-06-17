@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "ts-node index.ts",
     "start": "nodemon",
     "format": "npx prettier . --write",
     "format:check":"npx prettier . --check"
