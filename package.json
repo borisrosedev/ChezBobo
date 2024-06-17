@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && node ./dist/main.bundle.js",
+    "build": "webpack --config webpack.config.js && node ./dist/main.bundle.js",
     "dev": "nodemon",
     "format": "npx prettier . --write",
     "format:check": "npx prettier . --check"

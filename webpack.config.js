@@ -17,7 +17,7 @@ module.exports = {
         // qui ne doivent pas être résolus par Webpack.
         'liquidjs': 'commonjs liquidjs'
     },
-    watch: true,
+    watch: false,
     watchOptions: {
         ignored: /node_modules/,
     },
