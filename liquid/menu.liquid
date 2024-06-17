@@ -17,9 +17,9 @@
                         <figure>
                             <img src={{product.urls[0]}} alt={{product.name}} />
                             <section>
-                            <span>{{product.name}}</span>
+                            <span aria-label="Nom du produit">{{product.name}}</span>
                             {%  if product.price %}
-                            <span>{{product.price}} €</span>
+                            <span aria-lable="Prix du produit">{{product.price}} €</span>
                             {%  endif %}
                             </section>
                         </figure>

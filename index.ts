@@ -60,7 +60,6 @@ engine.registerTag(
 );
 
 const server = http.createServer((req, res) => {
-  console.log(req.url);
 
   if (req.method === "GET" && req.url?.startsWith("/css/")) {
     console.log("into it");
