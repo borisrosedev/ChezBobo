@@ -61,6 +61,11 @@ engine.registerTag(
 
 const server = http.createServer((req, res) => {
 
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With, Content-Type, Accept')
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS')
+  
+
   if (req.method === "GET" && req.url?.startsWith("/css/")) {
     console.log("into it");
     const filePath = path.join(__dirname, "public", req.url);
