@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+        <title> ChezBobo | Menu </title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script src="https://kit.fontawesome.com/1b1fa6fbda.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        {% header title %}
+        <main class="main menu__main">
+            {% title menuTitle %}
+            <section>
+                {% for product in products %}
+                    <article class="product-card">
+                        <figure>
+                            <img src={{product.urls[0]}} alt={{product.name}} />
+                            <section>
+                            <span>{{product.name}}</span>
+                            {%  if product.price %}
+                            <span>{{product.price}} €</span>
+                            {%  endif %}
+                            </section>
+                        </figure>
+                    </article>
+                {% endfor %}
+            </section>
+        </main>
+    </body>
+
+</html>
+
+

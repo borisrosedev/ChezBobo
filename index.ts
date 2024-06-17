@@ -8,10 +8,10 @@ import {
   TopLevelToken,
 } from "liquidjs";
 import header from "./ts/layouts/header";
-import * as path from "node:path";
-import * as http from "node:http";
+import * as path from "path";
+import * as http from "http";
 import products from "./products";
-import * as fs from "node:fs";
+import * as fs from "fs";
 import titleComponent from "./ts/components/titleComponent";
 
 const engine = new Liquid({
@@ -125,9 +125,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.on("connection", (stream) => {
-  console.log("someone is connecting");
-});
+
 
 server.listen(3000, () => {
   console.log("listening on port: 3000");

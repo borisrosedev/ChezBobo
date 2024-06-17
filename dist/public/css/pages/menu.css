@@ -1,0 +1,64 @@
+.menu__main {
+    flex-direction: column;
+    background-image: url("/assets/cafe.jpg");
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: #fff;
+    }
+  
+    section:has(article){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 100px;
+
+        article {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+            height: 200px;
+            width: 400px;
+
+            figure {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                section {
+                    display: flex;
+                    align-items: center;
+                    z-index: 5;
+                    position: absolute;
+                    bottom: 0;
+
+
+                    span {
+
+                        padding: 3px 10px;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        color: #fff;
+                        margin-inline: 10px;
+                        margin: 10px;
+
+                    }
+                   
+                }
+                img {
+                    position: absolute;
+                    inset: 0;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+  
+ 
+  }
+  
