@@ -13,6 +13,8 @@ import * as http from "http";
 import products from "./products";
 import * as fs from "fs";
 import titleComponent from "./ts/components/titleComponent";
+import * as dotenv from "dotenv"
+dotenv.config()
 
 const engine = new Liquid({
   root: path.resolve(__dirname, "liquid"),
@@ -127,6 +129,6 @@ const server = http.createServer((req, res) => {
 
 
 
-server.listen(3000, () => {
-  console.log("listening on port: 3000");
+server.listen(process.env.PORT, () => {
+  console.log("listening on port:" + process.env.PORT);
 });
